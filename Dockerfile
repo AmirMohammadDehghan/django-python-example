@@ -13,8 +13,6 @@ COPY requirements.txt ./
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-RUN python manage.py collectstatic
-
 CMD gunicorn django_app.wsgi:application --bind 0.0.0.0:8000
 
 EXPOSE 8000
